@@ -1,21 +1,21 @@
 import React from "react";
-
+import { FaUserPlus, FaEnvelopeOpenText ,FaChartLine } from "react-icons/fa";
 export default function ProcessSection() {
   const steps = [
     {
       title: "Sign Up",
       desc: "Create your account in minutes and get instant access to the platform.",
-      icon: "+",
+      icon: <FaUserPlus className="text-white" />,
     },
     {
       title: "Receive Your Login",
       desc: "Get your secure login details and access your personalized dashboard.",
-      icon: "✓",
+      icon: <FaEnvelopeOpenText className="text-white" />,
     },
     {
       title: "Start Earning",
       desc: "Begin evaluating opportunities and start earning without delays.",
-      icon: "$",
+      icon: <FaChartLine className="text-white" />,
     },
   ];
 
@@ -24,8 +24,8 @@ export default function ProcessSection() {
       {" "}
       <div className="max-w-6xl mx-auto text-center">
         {" "}
-        {/* Header */}{" "}
-        <span className="inline-block mb-4 px-4 py-1 text-sm rounded-full bg-neutral-800 text-neutral-300">
+        {" "}
+        <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 text-sm mb-4">
           {" "}
           Our Features{" "}
         </span>{" "}
@@ -37,7 +37,7 @@ export default function ProcessSection() {
           Our financial management platform is transforming the way people
           manage their money.{" "}
         </p>
-        {/* Steps */}
+    
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center">

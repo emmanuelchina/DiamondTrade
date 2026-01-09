@@ -54,13 +54,13 @@ const DashboardShowcase = () => {
       <div className="fixed bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 via-transparent to-transparent z-40 pointer-events-none" />
 
       <div className="fixed bottom-2 left-0 right-0 w-full z-50 bg-gradient-to-r from-gray-900/20 via-black/10 to-gray-900/20 backdrop-blur-xl shadow-xl rounded-3xl mx-4 hover:mb-3 transition-all duration-300 hover:shadow-2xl group">
-        {/* Transparent inner content */}
+  
         <div className="h-14 bg-black/5 backdrop-blur-2xl rounded-2xl mx-2 overflow-hidden">
           <div className="overflow-hidden whitespace-nowrap h-full px-4">
             <div className="inline-flex animate-marquee items-center h-full">
               {[...prices, ...prices, ...prices].map((coin, index) => (
                 <div key={index} className="mx-4 px-4 py-3 flex items-center gap-3 text-sm font-mono whitespace-nowrap hover:scale-105 transition-all duration-200 group/coin">
-                  {/* Coin logo */}
+            
                   <div className="w-9 h-9 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg group-hover/coin:bg-white/10 hover:shadow-xl transition-all duration-200">
                     <img 
                       src={coin.logo} 
@@ -70,7 +70,7 @@ const DashboardShowcase = () => {
                     />
                   </div>
                   
-                  {/* Price info */}
+             
                   <div className="min-w-[100px]">
                     <div className="font-bold text-base text-white tracking-tight">
                       ${coin.price?.toLocaleString(undefined, {maximumFractionDigits: 2}) ?? '0.00'}

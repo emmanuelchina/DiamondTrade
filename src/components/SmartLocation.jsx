@@ -4,22 +4,22 @@ const tabs = [
   {
     id: "monitoring",
     label: "Monitoring",
-    image: "/IMG/ai-generated-8165284_1280.webp",
+    image: "/IMG/trading-643722_640.jpg",
   },
   {
     id: "analytics",
     label: "Analytics",
-    image: "/src/assets/analytics.png",
+    image: "/IMG/hand-2722098_640.jpg",
   },
   {
     id: "performance",
     label: "Performance",
-    image: "/src/assets/performance.png",
+    image: "/IMG/stock-1863880_640.jpg",
   },
   {
     id: "feedback",
     label: "Feedback",
-    image: "/src/assets/feedback.png",
+    image: "/IMG/review-5207277_640.jpg",
   },
 ];
 
@@ -33,11 +33,8 @@ export default function SmartSolutions() {
 
       <div className="relative max-w-6xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
-          Smart Solutions Designed <br />
-          <span className="text-gray-400">
-            For Your Diamond Trading Success
-          </span>
+        <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+          Smart Solutions  <br></br> for You
         </h2>
 
         <p className="mt-6 text-gray-400 max-w-2xl mx-auto">

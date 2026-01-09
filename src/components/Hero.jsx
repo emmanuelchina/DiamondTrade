@@ -41,7 +41,7 @@ export default function Hero() {
             {/* CTA */}
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="/signup"
+                href="/Login"
                 className="
                   px-6 py-3 text-base font-semibold text-white
                   rounded-md
@@ -55,7 +55,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/markets"
+                href="/Features"
                 className="
                   px-6 py-3 text-base font-medium
                   text-slate-200

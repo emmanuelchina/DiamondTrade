@@ -1,87 +1,118 @@
-export default function Features3() {
+import React from "react";
+export default function Feature3() {
   return (
-    <section className="bg-[#05051e]   text-white py-24 px-6">
+    <section className="bg-[#05051e] to-black text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
-
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold">
-            Trade Diamonds <span className="text-gray-400">And More</span>
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-bold text-blue-400 leading-tight">
+            Multiple Trading <span className="text-white">Platforms</span>
           </h2>
-          <p className="mt-4 text-gray-400 max-w-xl mx-auto">
-            Diamond Trade is transforming how investors trade, store,
-            and grow wealth through secured diamond-backed assets.
+          <p className="mt-6 text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Trade on MT4, MT5, cTrader & Match-Trader with advanced features and superior execution.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Left Side - Fast Payouts + Platforms */}
+          <div className="space-y-8 lg:space-y-12">
+            {/* Fast Payouts Card */}
+            <div className="group relative bg-gradient-to-br from-slate-900/90 to-slate-900 backdrop-blur-xl border border-blue-400/30 p-10 rounded-3xl hover:scale-[1.02] transition-all duration-500">
+              <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/15" />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-4">Fast Payouts</h3>
+                <p className="text-gray-300 mb-8 text-lg">in 1-3 days</p>
+                
+                {/* Gauge Chart */}
+                <div className="relative w-full h-64 flex items-center justify-center">
+                  <svg viewBox="0 0 300 160" className="w-full h-full">
+                    {/* Outer ring */}
+                    <circle 
+                      cx="150" cy="100" r="70" 
+                      fill="none" 
+                      stroke="#1e40af" 
+                      strokeWidth="20"
+                      strokeLinecap="round"
+                      strokeDasharray="440 440"
+                      strokeDashoffset="220"
+                      className="rotate-[-135deg] origin-center"
+                    />
+                    {/* Inner fill */}
+                    <circle 
+                      cx="150" cy="100" r="50" 
+                      fill="none" 
+                      stroke="#3b82f6" 
+                      strokeWidth="25"
+                      strokeLinecap="round"
+                      strokeDasharray="314 314"
+                      strokeDashoffset="94"
+                      className="rotate-[-135deg] origin-center"
+                    />
+                    {/* Center */}
+                    <circle cx="150" cy="100" r="35" fill="slate-900" />
+                  </svg>
+                  
+                  {/* Labels */}
+                  <div className="absolute left-8 top-1/2 -translate-y-1/2">
+                    <div className="text-2xl font-bold text-blue-400">95%</div>
+                    <div className="text-sm text-gray-400">Success</div>
+                  </div>
+                  <div className="absolute right-6 top-1/2 -translate-y-1/2 text-right">
+                    <div className="text-sm text-gray-400">Payouts</div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          {/* Left Card */}
-          <div className="relative rounded-3xl bg-gradient-to-br from-neutral-900 to-black border border-white/10 p-8 overflow-hidden">
-
-            {/* Glow */}
-            <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 blur-3xl rounded-full" />
-
-            <h3 className="text-xl font-semibold mb-2">Fast Withdrawals</h3>
-            <p className="text-gray-400 mb-6">
-              Withdraw diamond-backed profits within 7 business days.
-            </p>
-
-            {/* Gauge */}
-            <div className="bg-black/40 rounded-xl p-6 border border-white/10">
-              <p className="text-sm text-gray-300 mb-4">MARKET SIGNAL</p>
-
-              <div className="relative w-full h-40 flex items-center justify-center">
-                <div className="w-56 h-56 rounded-full border-[10px] border-blue-500/30 rotate-[-120deg]" />
-                <div className="absolute w-32 h-1 bg-white rotate-[20deg]" />
-                <span className="absolute bottom-6 text-sm text-gray-300">
-                  BUY
-                </span>
+            {/* Best Trading Conditions */}
+            <div className="group relative bg-gradient-to-br from-slate-900/90 to-slate-900 backdrop-blur-xl border border-blue-400/30 p-10 rounded-3xl hover:scale-[1.02] transition-all duration-500">
+              <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/15" />
+              <div className="relative z-10 text-center">
+                <h3 className="text-2xl font-bold text-white mb-6">Best Trading Conditions</h3>
+                <p className="text-gray-400 mb-8 max-w-md mx-auto">
+                  Superior execution with tight spreads for maximum profitability
+                </p>
+                
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <div className="text-3xl font-bold text-blue-400">0.2 pips</div>
+                    <div className="text-sm text-gray-400">EUR/USD</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-blue-400">$50M</div>
+                    <div className="text-sm text-gray-400">Liquidity</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Card */}
-          <div className="relative rounded-3xl bg-gradient-to-br from-neutral-900 to-black border border-white/10 p-8 overflow-hidden">
-
-            {/* Glow */}
-            <div className="absolute bottom-[-120px] right-[-120px] w-96 h-96 bg-blue-500/20 blur-3xl rounded-full" />
-
-            <h3 className="text-xl font-semibold mb-2">
-              Multiple Trading Options
-            </h3>
-
-            <p className="text-gray-400 mb-6">
-              Trade diamonds, precious assets, and indices on a secured
-              Diamond Trade platform.
-            </p>
-
-            {/* Watchlist */}
-            <div className="space-y-4">
-              {[
-                { name: "Brilliant Cut Diamond", price: "$82,394" },
-                { name: "Princess Cut Diamond", price: "$50,000" },
-                { name: "Diamond Index Fund", price: "$523,300" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex justify-between items-center bg-black/40 p-4 rounded-xl border border-white/10"
-                >
-                  <span className="text-sm">{item.name}</span>
-                  <span className="text-sm text-gray-400">
-                    {item.price}
-                  </span>
+          {/* Right Side - Trading Platforms List */}
+          <div className="space-y-6">
+            {/* Platform Cards */}
+            {[
+              { name: "MetaTrader 4", subtitle: "Industry Standard", bg: "bg-gradient-to-r from-slate-900 to-slate-800" },
+              { name: "MetaTrader 5", subtitle: "Next Gen", bg: "bg-gradient-to-r from-slate-900/90 to-slate-800/90" },
+              { name: "cTrader", subtitle: "ECN Power", bg: "bg-gradient-to-r from-slate-900/80 to-slate-800/80" },
+              { name: "Match-Trader", subtitle: "Modern UX", bg: "bg-gradient-to-r from-slate-900/70 to-slate-800/70" },
+            ].map((platform, i) => (
+              <div
+                key={i}
+                className={`group relative ${platform.bg} backdrop-blur-xl border border-blue-400/40 p-6 rounded-2xl hover:scale-105 hover:border-blue-400/70 transition-all duration-300 overflow-hidden`}
+              >
+                <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/20" />
+                <div className="relative z-10 flex items-center justify-between">
+                  <div>
+                    <h4 className="font-bold text-white text-lg">{platform.name}</h4>
+                    <p className="text-gray-400 text-sm">{platform.subtitle}</p>
+                  </div>
+                  <div className="w-3 h-20 bg-gradient-to-b from-blue-400 to-transparent rounded-full group-hover:animate-pulse" />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-
-        {/* Bottom Text */}
-        <p className="text-center text-gray-500 mt-14">
-          Best trading conditions for diamond investors worldwide.
-        </p>
       </div>
     </section>
   );

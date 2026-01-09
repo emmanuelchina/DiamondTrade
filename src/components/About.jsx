@@ -30,7 +30,7 @@ export default function About() {
 
               <div className="mt-10">
                 <a
-                  href="#trade"
+                  href="/Register"
                   className="inline-flex items-center gap-x-2 rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-2xl hover:shadow-blue-500/50 hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-all duration-300"
                 >
                   Start Trading Now

@@ -12,9 +12,9 @@ const Aboutsession = () => (
         <motion.h1 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-white to-blue-200 bg-clip-text text-transparent drop-shadow-2xl"
+          className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-white to-blue-200 bg-clip-text text-transparent drop-shadow-2xl"
         >
-          About Trenox
+          About DiamondTrade
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
@@ -22,7 +22,7 @@ const Aboutsession = () => (
           transition={{ delay: 0.2 }}
           className="text-xl md:text-2xl text-blue-100 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          A bold and modern platform crafted for SaaS startups, tech companies, and digital products. Fully responsive and conversion-optimized.
+     DiamondTrade delivers lightning-fast execution, bank-grade security, and 24/7 access to global markets. Trade forex, crypto, stocks, indices, and commodities with institutional-grade tools and transparent pricing.
         </motion.p>
       </div>
      <WhatWeDo />

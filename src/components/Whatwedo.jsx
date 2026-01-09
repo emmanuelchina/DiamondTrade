@@ -1,11 +1,11 @@
+import {FaTrophy, FaUsers, FaGlobe} from 'react-icons/fa';
+
 export default function WhatWeDo() {
   return (
     <section className="relative bg-[#05051e] text-white py-20 overflow-hidden">
-   
       <div className="absolute inset-0 bg-[#05051e] "></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">
             What We <span className="text-blue-500">Do?</span>
@@ -31,17 +31,17 @@ export default function WhatWeDo() {
           <StatCard
             value="320+"
             label="Total Rewards"
-            icon="🏆"
+            icon={<FaTrophy className="text-blue-400" />}
           />
           <StatCard
             value="82,000+"
             label="Total Traders"
-            icon="👥"
+            icon={<FaUsers className="text-blue-500" />}
           />
           <StatCard
             value="220+"
             label="Countries"
-            icon="🌍"
+            icon={<FaGlobe className="text-blue-400" />}
           />
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function WhatWeDo() {
 function StatCard({ value, label, icon }) {
   return (
     <div className="relative bg-gradient-to-br from-blue-500/20 to-white/5 backdrop-blur border border-white/40 rounded-2xl p-8 text-center">
-      <div className="text-4xl mb-4">{icon}</div>
+      <div className="flex items-center justify-center text-4xl mb-4">{icon}</div>
       <h3 className="text-4xl font-bold">{value}</h3>
       <p className="text-gray-400 mt-2">{label}</p>
     </div>

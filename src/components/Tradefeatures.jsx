@@ -1,5 +1,6 @@
 import React from "react";
-
+import {MdAccessTime} from "react-icons/md"
+import { FaCheckCircle } from "react-icons/fa";
 export default function TradeFeatures() {
   return (
     <section className="relative bg-[#05051e] text-white py-24 overflow-hidden">
@@ -31,8 +32,8 @@ export default function TradeFeatures() {
               no stress — just results.
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
-                ⏱
+              <div className=" text-2xl rounded-full  flex items-center justify-center text-blue-400">
+               <MdAccessTime/>
               </div>
               <span className="text-sm text-white/60">
                 Reliable & transparent withdrawals
@@ -72,10 +73,12 @@ export default function TradeFeatures() {
 
           {/* Card 4 */}
           <div className="rounded-2xl bg-gradient-to-br from-blue-500/20 to-white/5 backdrop-blur p-8 shadow-lg">
-            <h3 className="text-2xl font-semibold mb-2">Free Mamusha 🎁</h3>
+            <h3 className="text-2xl font-semibold mb-2 flex items-center">
+              Free Trading &nbsp; <FaCheckCircle className=" text-3xl text-green-500" />
+            </h3>
             <p className="text-white/80 mb-6">
-              Trade with confidence and enjoy *free mamusha* when you come today
-              — because Diamond Trade rewards action.
+              Trade with confidence and enjoy free Trading when you come today
+               because DiamondTrade rewards action.
             </p>
             <button className="mt-auto px-6 py-3 rounded-xl bg-blue-500 hover:bg-blue-600 transition font-medium">
               Start Trading Now

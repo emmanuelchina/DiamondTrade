@@ -1,98 +1,81 @@
-export default function Contact() {
+import { motion } from "framer-motion";
+
+const testimonials = [
+  {
+    name: "Figo Nath",
+    text: "We've reduced project delivery times by nearly 40% since integrating their solution. It's intuitive, efficient, and reliable.",
+    date: "May 10, 2024",
+  },
+  {
+    name: "Liam Everhart",
+    text: "Youflow has totally changed the way we handle transactions. Everything just clicks, and we've seen awesome improvements in efficiency.",
+    date: "April 10, 2024",
+  },
+  {
+    name: "Carmen Waters",
+    text: "The platform has revolutionized our transaction processes. Everything flows seamlessly with remarkable gains.",
+    date: "June 12, 2024",
+  },
+  {
+    name: "Sophia Miller",
+    text: "Automation has saved our team countless hours every week. The experience feels smooth and thoughtfully designed.",
+    date: "June 10, 2024",
+  },
+  {
+    name: "Daniel Brooks",
+    text: "The insights and reporting features alone make this platform worth it. It’s clean, fast, and extremely reliable.",
+    date: "May 28, 2024",
+  },
+];
+
+export default function Content() {
   return (
-    <div className="bg-gray-900 py-24 sm:py-32">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-center text-base/7 font-semibold text-indigo-400">Deploy faster</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-          Everything you need to deploy your app
+    <section className="relative overflow-hidden bg-black py-20">
+      {" "}
+      {/* background glow */}{" "}
+      <div className="absolute inset-0 bg-[#05051e]" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          What Clients Think <br /> About Our Services
+        </h2>
+        <p className="text-white/70 max-w-xl mb-12">
+          Our financial management platform is transforming the way people
+          manage their money.
         </p>
-        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-          <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-gray-800 lg:rounded-l-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Mobile friendly</p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-                </p>
-              </div>
-              <div className="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
-                <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 outline outline-white/20">
-                  <img
-                    alt=""
-                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
-                    className="size-full object-cover object-top"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 lg:rounded-l-4xl" />
-          </div>
-          <div className="relative max-lg:row-start-1">
-            <div className="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-t-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
-              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Performance</p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.
-                </p>
-              </div>
-              <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png"
-                  className="w-full max-lg:max-w-xs"
-                />
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-t-4xl" />
-          </div>
-          <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="absolute inset-px rounded-lg bg-gray-800" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Security</p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">
-                  Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi.
-                </p>
-              </div>
-              <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png"
-                  className="h-[min(152px,40cqw)] object-cover"
-                />
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15" />
-          </div>
-          <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-b-4xl lg:rounded-r-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Powerful APIs</p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">
-                  Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.
-                </p>
-              </div>
-              <div className="relative min-h-120 w-full grow">
-                <div className="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-gray-900/60 outline outline-white/10">
-                  <div className="flex bg-gray-900 outline outline-white/5">
-                    <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
-                      <div className="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">
-                        NotificationSetting.jsx
-                      </div>
-                      <div className="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
-                    </div>
-                  </div>
-                  <div className="px-6 pt-6 pb-14">{/* Your code example */}</div>
-                </div>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-b-4xl lg:rounded-r-4xl" />
-          </div>
-        </div>
       </div>
-    </div>
-  )
+      {/* marquee */}
+      <div className="relative flex gap-6 overflow-hidden">
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: [0, -1200] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 40,
+            ease: "linear",
+          }}
+        >
+          {[...testimonials, ...testimonials].map((item, i) => (
+            <div
+              key={i}
+              className="min-w-[340px] rounded-2xl bg-white/10 backdrop-blur-xl p-6 text-white shadow-lg"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                {Array.from({ length: 5 }).map((_, idx) => (
+                  <span key={idx} className="text-orange-400">
+                    ★
+                  </span>
+                ))}
+              </div>
+              <p className="text-white/80 mb-4">“{item.text}”</p>
+              <div className="text-sm text-white/60">
+                <p className="font-semibold text-white">{item.name}</p>
+                <p>{item.date}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
 }
