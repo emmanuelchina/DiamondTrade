@@ -98,7 +98,12 @@ export default function Hero() {
               {/* Main image/chart area */}
               <div className="flex-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl flex items-center justify-center border-2 border-white/5 backdrop-blur-sm mt-6">
                 <div className="text-slate-400 text-lg">
-                  Your chart/image goes here
+                  <img
+                  src="/IMG/stock-6596910_640.jpg"
+                  alt="Market Chart"
+                  className="w-full h-full object-contain"
+                />
+
                 </div>
               </div>
 
