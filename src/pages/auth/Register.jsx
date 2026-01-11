@@ -15,20 +15,57 @@ export default function Register() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(''); // 👈 ADD THIS!
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // 👈 FIXED: Real backend connection!
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => setLoading(false), 2000);
+    setError('');
+
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      setLoading(false);
+      return;
+    }
+
+    console.log('🔥 Registering:', formData.email); // DEBUG
+
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          email: formData.email, 
+          password: formData.password 
+        }) // Backend only needs email + password!
+      });
+      
+      const data = await response.json();
+      console.log('Register response:', data); // DEBUG
+      
+      if (!response.ok) throw new Error(data.error || 'Registration failed');
+      
+      // → OTP PAGE!
+      localStorage.setItem('tempEmail', formData.email);
+      window.location.href = `/otp-verify?email=${formData.email}`;
+    } catch (err) {
+      console.error('Register error:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleLogin = () => {
+ const handleLogin = () => {
     navigate("/Login");
   };
+
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-slate-900 via-[#05051e] to-black flex items-center justify-center p-4 md:p-6">
@@ -188,7 +225,7 @@ export default function Register() {
             <p className="text-center mt-6 md:mt-8 text-xs md:text-sm">
               Already have an account?{' '}
               <button
-                onClick={handleLogin}
+             onClick={handleLogin}
                 className="text-blue-400 font-semibold hover:text-blue-300 transition-colors inline"
               >
                 Login Here

@@ -7,13 +7,12 @@ import Footer from "./components/Footer";
 import Approuter from "./Router/Router";
 import Scroll from "./components/Scrolltothetop";
 import "./App.css";
-
-
 export default function App() {
   return (
     <div>
       <Scroll />
-
+   
+    
       <Navbar />
       <Approuter />
       <DashboardShowcase />

@@ -11,6 +11,7 @@ export default function Navbar() {
     { id: "Home", label: "Home", path: "/" },
     { id: "Company", label: "Company", path: "/About" },
     { id: "Features", label: "Features", path: "/Features" },
+     { id: "Register", label: "Register", path: "/register" },
   ];
 
   // ✅ AUTO-SET ACTIVE BASED ON CURRENT PATH
