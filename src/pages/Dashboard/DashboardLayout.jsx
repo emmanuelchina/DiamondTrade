@@ -16,7 +16,6 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate real-time price updates + chart data
     const interval = setInterval(() => {
       setLivePrices({
         BTC: { price: 30000 + (Math.random() - 0.5) * 2000, change: 2.45 + (Math.random() - 0.5) * 3 },
@@ -24,7 +23,7 @@ export default function Dashboard() {
         SOL: { price: 10 + (Math.random() - 0.5) * 1, change: 5.67 + (Math.random() - 0.5) * 4 }
       });
 
-      // Generate 20min price history for charts
+      
       const newHistory = {
         BTC: Array(20).fill().map((_, i) => ({
           time: `${i + 1}'`,
