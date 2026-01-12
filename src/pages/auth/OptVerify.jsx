@@ -30,7 +30,7 @@ export default function OtpVerify() {
     setError('');
 
     try {
-      const response = await fetch('https://diamondtrade-backend.onrender.com', {
+      const response = await fetch('https://diamondtrade-backend.onrender.com/api/auth/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp })

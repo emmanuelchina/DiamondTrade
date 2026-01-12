@@ -37,7 +37,7 @@ export default function Register() {
     console.log('🔥 Registering:', formData.email); // DEBUG
 
     try {
-      const response = await fetch('https://diamondtrade-backend.onrender.com', {
+      const response = await fetch('https://diamondtrade-backend.onrender.com/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
