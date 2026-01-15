@@ -17,27 +17,33 @@ export default function Login() {
     
     console.log('🔥 Login attempt:', email); // DEBUG
 
-    try {
-      const res = await fetch('https://diamondtrade-backend.onrender.com/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }) // EMAIL ONLY!
-      });
-      
-      const data = await res.json();
-      console.log('Backend response:', data); // DEBUG
-      
-      if (!res.ok) throw new Error(data.error || 'Login failed');
-      
-      localStorage.setItem('tempEmail', email);
-      window.location.href = `/otp-verify?email=${email}`;
-    } catch (err) {
-      console.error('Login error:', err);
-      setError(err.message); // 👈 FIXED: SHOW ERROR!
-    } finally {
-      setLoading(false);
-    }
-  };
+   try {
+  const res = await fetch('https://diamondtrade-backend.onrender.com/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })  // ✅ Email + Password
+  });
+  
+  const data = await res.json();
+  console.log('Backend response:', data);
+  
+  // ✅ FIXED: ONLY go to dashboard on SUCCESS
+  if (res.ok) {
+    localStorage.setItem('token', data.token);      // Save JWT
+    window.location.href = '/dashboard';           // ✅ $12K Dashboard!
+    return;
+  }
+  
+  // Only show error on failure
+  throw new Error(data.error || 'Login failed');
+  
+} catch (err) {
+  console.error('Login error:', err);
+  setError(err.message);
+} finally {
+  setLoading(false);
+}
+
 
   // Rest of your JSX stays EXACTLY SAME...
   return (
@@ -117,4 +123,5 @@ export default function Login() {
       </div>
     </section>
   );
+}
 }

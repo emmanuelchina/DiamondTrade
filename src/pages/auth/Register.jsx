@@ -15,13 +15,13 @@ export default function Register() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(''); // 👈 ADD THIS!
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 👈 FIXED: Real backend connection!
+  // ✅ FIXED: SUCCESS → DASHBOARD (NO OTP!)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -34,7 +34,7 @@ export default function Register() {
       return;
     }
 
-    console.log('🔥 Registering:', formData.email); // DEBUG
+    console.log('🔥 Registering:', formData.email);
 
     try {
       const response = await fetch('https://diamondtrade-backend.onrender.com/api/auth/register', {
@@ -43,37 +43,40 @@ export default function Register() {
         body: JSON.stringify({ 
           email: formData.email, 
           password: formData.password 
-        }) // Backend only needs email + password!
+        })
       });
       
       const data = await response.json();
-      console.log('Register response:', data); // DEBUG
+      console.log('✅ Register response:', data);
       
-      if (!response.ok) throw new Error(data.error || 'Registration failed');
+      // ✅ FIXED: SUCCESS = DASHBOARD (NOT OTP!)
+      if (response.ok) {
+        localStorage.setItem('token', 'user-' + Date.now()); // Temp token
+        localStorage.setItem('userEmail', formData.email);
+        window.location.href = '/dashboard'; // $12K TRADING!
+        return;
+      }
       
-      // → OTP PAGE!
-      localStorage.setItem('tempEmail', formData.email);
-      window.location.href = `/otp-verify?email=${formData.email}`;
+      throw new Error(data.error || 'Registration failed');
+      
     } catch (err) {
-      console.error('Register error:', err);
+      console.error('❌ Register error:', err);
       setError(err.message);
     } finally {
       setLoading(false);
     }
   };
 
- const handleLogin = () => {
+  const handleLogin = () => {
     navigate("/Login");
   };
 
-
   return (
     <section className="min-h-screen bg-gradient-to-b from-slate-900 via-[#05051e] to-black flex items-center justify-center p-4 md:p-6">
-    
       <div className="w-full max-w-lg pt-15">
         <div className="group relative bg-gradient-to-br from-slate-900/95 to-slate-900 backdrop-blur-xl border border-blue-400/30 rounded-3xl p-8 md:p-10 shadow-2xl overflow-hidden max-w-lg mx-auto">
           
-          {/* ✅ FIXED: Blobs contained within bounds */}
+          {/* Blobs */}
           <div className="absolute -top-10 -right-10 w-32 h-32 md:w-48 md:h-48 bg-blue-500/10 blur-xl rounded-full animate-pulse" />
           <div className="absolute -bottom-10 -left-10 w-40 h-40 md:w-64 md:h-64 bg-blue-500/5 blur-2xl rounded-full animate-pulse delay-1000" />
 
@@ -87,6 +90,13 @@ export default function Register() {
               </h1>
               <p className="text-gray-400 mt-2 text-base md:text-lg">Join DiamondTrade Today</p>
             </div>
+
+            {/* ✅ ERROR DISPLAY */}
+            {error && (
+              <div className="mb-6 p-4 bg-red-500/20 border border-red-400/50 rounded-2xl backdrop-blur-sm">
+                <p className="text-red-200 text-sm">{error}</p>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               {/* Name Fields */}
@@ -225,7 +235,7 @@ export default function Register() {
             <p className="text-center mt-6 md:mt-8 text-xs md:text-sm">
               Already have an account?{' '}
               <button
-             onClick={handleLogin}
+                onClick={handleLogin}
                 className="text-blue-400 font-semibold hover:text-blue-300 transition-colors inline"
               >
                 Login Here

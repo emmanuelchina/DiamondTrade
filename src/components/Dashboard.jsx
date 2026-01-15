@@ -61,7 +61,8 @@ const DashboardShowcase = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      {/* ✅ FIXED: Tailwind CSS instead of style jsx */}
+      <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-33.33%); }
