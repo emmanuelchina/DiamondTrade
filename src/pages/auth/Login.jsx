@@ -21,7 +21,7 @@ export default function Login() {
       const res = await fetch('https://diamondtrade-backend.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }) // EMAIL ONLY!
+        body: JSON.stringify({ email, password }) // EMAIL ONLY!
       });
       
       const data = await res.json();
